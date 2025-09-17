@@ -1,0 +1,19 @@
+{
+  "name": "altairportfolio",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@tinyhttp/app": "^3.0.1",
+    "liquidjs": "^10.21.1",
+    "serve-static": "^2.2.0"
+  }
+}

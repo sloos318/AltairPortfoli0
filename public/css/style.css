@@ -1,0 +1,267 @@
+@font-face {
+  font-family: "mfek"; /* custom name you choose */
+  src: url("/fonts/mfek_sans/MFEK-Sans.ttf") format("truetype-variations");
+  font-style: normal;
+}
+
+:root {
+  --title-weight: 900;
+  --title-width: 93;
+  --title-trma: 1000;
+  --title-size: clamp(2.5rem, 25vw, 90rem);
+
+  --side-margin: 5vw;
+
+  --color-gray: #828A82;
+  --color-black: #100f0f;
+  --color-white: #f4e9e9;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "mfek", sans-serif;
+  color: var(--color-white);
+}
+
+html, body {
+  cursor: none;
+}
+
+.cursor-dot, .cursor-ring {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+/* inner dot */
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+/* outer ring */
+.cursor-ring {
+  width: 28px;
+  height: 28px;
+  border: 2px solid rgba(255,255,255,0.5);
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#dotCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none; /* safe now */
+}
+
+body {
+  display: grid;
+  grid-template-columns: var(--side-margin) repeat(8, 1fr) var(--side-margin);
+  
+
+  background-color: var(--color-black);
+
+  main {
+    grid-column: 2/10;
+    grid-template-columns: subgrid;
+    display: grid;
+
+    section:nth-of-type(1) {
+      grid-column: 1 / 9;
+      position: absolute;
+      top: 25vw;
+      left: 3vw;
+      right: 3vw;
+
+      ul {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2%;
+        height: 65vw;
+        position: relative;
+
+        li{
+          /* width: 23.5%; */
+          position: relative;
+          perspective: 1000px;
+          z-index: 1;
+
+          /* offset every 2nd column */
+          &:nth-child(4n+2),
+          &:nth-child(4n+4) {
+            transform: translateY(25%); /* adjust amount to your liking */
+          }
+
+          &:hover {
+            z-index: 999;
+          }
+          a {
+            display: grid;
+            height: 100%;
+            transition: .3s ease-in-out;
+            z-index: 1;
+
+              transform-style: preserve-3d;
+              transition: transform 0.2s ease-out;
+              will-change: transform;
+
+            p {
+              position: absolute;
+              z-index: 6;
+              font-size: clamp(.2rem, .8vw, 1.2rem);
+              font-weight: 600;
+              color: var(--color-white);
+              background-color: var(--color-black);
+              padding: .6vw 1.2vw;
+              border-radius: 10em;
+              transition: .3s ease-in-out;
+
+              &:nth-of-type(1) {
+                top: 2rem;
+                right: 1rem;
+              }
+              &:nth-of-type(2) {
+                top: 2rem;
+                right: 9vw;
+              }
+            }
+
+
+
+
+            &::after {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              z-index: 2;
+
+              height: 100%;
+              width: 100%;
+              background-image: linear-gradient(to top, rgb(24, 24, 24, .3), rgba(255,255,255,0));
+              pointer-events: none;
+
+              transition: .3s ease-in-out;
+            }
+
+            img {
+              width: 100%;
+              height: auto;
+              position: absolute;
+              bottom: 0;
+              transition: .3s ease-in-out;
+              transform: translateZ(0); /* keep them visible */
+            }
+
+            img:nth-of-type(1) {
+              z-index: 2;
+              transform: translateZ(0px) scale(1) rotate(0deg);
+              transform-origin: center;
+            }
+
+            img:nth-of-type(2) {
+              z-index: 3;
+              transform: translateZ(40px) scale(1) rotate(0deg);
+              transform-origin: center;
+            }
+
+            img:nth-of-type(3) {
+              width: 60%;
+              justify-self: center;
+              transform: translateY(-15%) translateZ(60px) scale(1) rotate(0deg);
+              transform-origin: center;
+            }
+
+            img:nth-of-type(4) {
+              z-index: 5;
+              width: 120%;
+              justify-self: center;
+              top: -5%;
+              opacity: 0;
+              filter: drop-shadow(.2rem .2rem .2rem rgba(0,0,0,0.4));
+              transform: translateZ(20px) scale(1) rotate(0deg);
+              transform-origin: center;
+            }
+
+            &:hover p{
+              transform: translateX(20%) translateY(-80%) translateZ(60px);
+            }
+
+            &:hover::after {
+              scale: 1.1;
+              z-index: 2;
+            }
+
+            &:hover img:nth-of-type(1) {
+              transform: translateZ(0px) scale(1.1) rotate(0deg);
+            }
+            &:hover img:nth-of-type(2)  {
+              transform: translateZ(40px) translateY(-5%) scale(1.7) rotate(5deg);
+              filter: drop-shadow(1rem .5rem .5rem rgba(0,0,0,0.5));
+            }
+            &:hover img:nth-of-type(3) {
+              transform: translateY(-40%) translateZ(60px) scale(1.3) rotate(-6deg);
+              filter: drop-shadow(.5rem .8rem .5rem rgba(0,0,0,0.6));
+            }
+            &:hover img:nth-of-type(4) {
+              opacity: 1;
+              transform: translateZ(20px) scale(1.1) rotate(0deg);
+              filter: drop-shadow(.5rem .8rem .5rem rgba(0,0,0,0.6));
+            }
+
+
+
+
+
+
+          }
+        }
+      }
+    }
+
+  }
+}
+
+
+
+h1  {
+    grid-column: 1/9;
+    justify-self: center;
+
+  span {
+    font-variation-settings: 
+    "wght" var(--title-weight),  /* Weight */
+    "wdth" var(--title-width),  /* Width */
+    "TRMA" var(--title-trma);   /* Your custom axis */
+    text-transform: uppercase;
+    font-size: var(--title-size);
+
+  }
+    & span.one, & span.two, & span.three, & span.four, & span.five, & span.six {
+      animation: changetrma 4s ease-in-out infinite;
+      animation-delay: calc(0.6s * var(--index));
+    }
+}
+
+
+
+
+@keyframes changetrma {
+  0%   { font-variation-settings: "wght" 1000, "wdth" 93, "TRMA" 1000; }
+  50%  { font-variation-settings: "wght" 100,  "wdth" 93, "TRMA" 1000; }
+  100% { font-variation-settings: "wght" 1000, "wdth" 93, "TRMA" 1000; }
+}
