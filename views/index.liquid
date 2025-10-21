@@ -1,81 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Altair Portfolio</title>
 </head>
 <body>
-    <header>
+  <header>
+    <div>
+      <a href="#" id="contactButton">
+        Contact
+        <span class="bubbles">
+          {% for i in (1..11) %}
+            <span class="bubble" style="--i: {{ i | divided_by: 1.0 }};"></span>
+          {% endfor %}
+        </span>
+      </a>
 
-    </header>
-    <main>
-        <h1><span style="--index: 1;" class="one">A</span><span style="--index: 2;" class="two">l</span><span style="--index: 3;" class="three">t</span><span style="--index: 4;" class="four">a</span><span style="--index: 5;" class="five">i</span><span style="--index: 6;" class="six">r</span></h1>
-        <section>
-            <ul>
+      <form action="">
+        <input type="checkbox" id="check">
+        <div class="plate plate7"> 
+          <svg class="burger" version="1.1" viewBox="0 0 100 100"> 
+            <path class="line line1" d="M 30,35 H 60 C 63.595663,35 65,32.357023 65,30 C 65,27.642977 62.357023,25 60,25 C 57.642977,25 55,25.933659 55,30 V 77.828008" /> 
+            <path class="line line2" d="M 70,35 H 50 C 46.404337,35 45,32.357023 45,30 C 45,27.642977 47.642977,25 50,25 C 52.357023,25 55,25.933659 55,30 V 77.828008" /> 
+            <path class="line line3" d="M 30,50 H 55 C 58.595665,50 60.000005,47.357023 60.000005,45 C 60.000005,42.642977 57.357025,40 55,40 C 52.642977,40 50,40.933659 50,45 V 92.828008" /> 
+            <path class="line line4" d="M 70,50 H 45 C 41.404337,50 40,47.357023 40,45 C 40,42.642977 42.642977,40 45,40 C 47.357023,40 50,40.933659 50,45 V 92.828008" /> 
+            <path class="line line5" d="M 30,65 H 50 C 53.595665,65 55.000005,62.357023 55.000005,60 C 55.000005,57.642977 52.357025,55 50,55 C 47.642977,55 45,55.933659 45,60 V 107.82801" /> 
+            <path class="line line6" d="M 70,65 H 40 C 36.404337,65 35,62.357023 35,60 C 35,57.642977 37.642977,55 40,55 C 42.357023,55 45,55.933659 45,60 V 107.82801" /> 
+          </svg> 
+          <svg class="x" version="1.1" viewBox="0 0 100 100"> 
+            <path class="line" d="M 34,32 L 66,68" /> 
+            <path class="line" d="M 66,32 L 34,68" /> 
+          </svg>
+        </div>
+        <label>Menu</label>
+        <span class="bubbles">
+          {% for i in (1..11) %}
+            <span class="bubble" style="--i: {{ i | divided_by: 1.0 }};"></span>
+          {% endfor %}
+        </span>
+      </form>
+    </div>
+
+
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h1>
+        <span style="--index: 1;" class="one">A</span>
+        <span style="--index: 2;" class="two">l</span>
+        <span style="--index: 3;" class="three">t</span>
+        <span style="--index: 4;" class="four">a</span>
+        <span style="--index: 5;" class="five">i</span>
+        <span style="--index: 6;" class="six">r</span>
+      </h1>
+      <subtitle>Gamedesigner</subtitle>
+    </section>
+
+    <section>
+        <ul id="masonry">
+            {% for project in projects %}
+                {% if project.previewImages.size > 0 %}
                 <li>
-                    <a href="#" class="parallaxCard">
-                        <p>3D sculpting</p>
-                        <img src="./images/scene.png" alt="">
-                        <img src="./images/cutout.png" alt="">
-                        <img src="./images/name.png" alt="">
-                        <img src="./images/border.svg" alt="">
+                    <a href="/projects/{{ project.id }}" class="parallaxCard">
+                    <div>
+                        {% for tag in project.features %}
+                        <p>{{ tag }}</p>
+                        {% endfor %}
+                    </div>
+
+                    {% for img in project.previewImages %}
+                        <img src="{{ img.src }}" class="{{ img.class }}" alt="">
+                    {% endfor %}
                     </a>
                 </li>
-                <li>
-                    <a href="#" class="parallaxCard">
-                        <p>UX/UI design</p>
-                        <img src="./images/scene.png" alt="">
-                        <img src="./images/cutout.png" alt="">
-                        <img src="./images/name.png" alt="">
-                        <img src="./images/border.svg" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="parallaxCard">
-                        <p>3D sculpting</p>
-                        <p>UX/UI design</p>
-                        <img src="./images/scene.png" alt="">
-                        <img src="./images/cutout.png" alt="">
-                        <img src="./images/name.png" alt="">
-                        <img src="./images/border.svg" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="parallaxCard">
-                        <p>special effects</p>
-                        <img src="./images/scene.png" alt="">
-                        <img src="./images/cutout.png" alt="">
-                        <img src="./images/name.png" alt="">
-                        <img src="./images/border.svg" alt="">
-                    </a>
-                </li>       
-                <li>
-                    <a href="#" class="parallaxCard">
-                        <p>3D sculpting</p>
-                        <img src="./images/scene.png" alt="">
-                        <img src="./images/cutout.png" alt="">
-                        <img src="./images/name.png" alt="">
-                        <img src="./images/border.svg" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="parallaxCard">
-                        <p>special effects</p>
-                        <img src="./images/scene.png" alt="">
-                        <img src="./images/cutout.png" alt="">
-                        <img src="./images/name.png" alt="">
-                        <img src="./images/border.svg" alt="">
-                    </a>
-                </li>
-            </ul>
-        </section>
-    </main>
-    <footer></footer>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </section>
+  </main>
+
+  <footer></footer>
+
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="position:absolute;width:0;height:0">
+    <defs>
+      <filter id="gooey">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
+        <feColorMatrix in="blur" mode="matrix"
+          values="1 0 0 0 0
+                  0 1 0 0 0
+                  0 0 1 0 0
+                  0 0 0 12 -6" result="gooey" />
+        <feComposite in="SourceGraphic" in2="gooey" operator="atop"/>
+      </filter>
+    </defs>
+  </svg>
+  <div class="gradient"></div>
+
+  <canvas id="dotCanvas"></canvas>
+  <div id="container3D"></div>
+  <script src="./scripts/background.js"></script>
+  <script src="./scripts/index.js"></script>
+  <script type="module" src="./scripts/3D.js"></script>
 </body>
-<canvas id="dotCanvas"></canvas>
-<script src="./scripts/background.js"></script>
-<script src="./scripts/paralax.js"></script>
-<script src="./scripts/cursor.js"></script>
 </html>

@@ -1,0 +1,16 @@
+<h1>Projects</h1>
+<a href="/add_project">Add New Project</a>
+
+<ul>
+{% for project in projects %}
+  <li>
+    <h2>{{ project.name }}</h2>
+    <p>{{ project.description }}</p>
+    <p>Features: {{ project.features | join: ", " }}</p>
+    <p>Filters: {{ project.filters | join: ", " }}</p>
+    {% for img in project.images %}
+      <img src="{{ img }}" alt="{{ project.name }}" width="150">
+    {% endfor %}
+  </li>
+{% endfor %}
+</ul>

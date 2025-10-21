@@ -1,0 +1,114 @@
+[
+  {
+    "name": "Prop Design - Thee pot",
+    "description": "Een prop design project waarin een theepot is ontworpen met aandacht voor vorm, materiaal en functie.",
+    "tags": ["3D model", "product design", "materiaalstudie", "jaar 1", "2023 juni"],
+    "images": {}
+  },
+  {
+    "name": "Context II - DOM.com",
+    "description": "Tweedejaars context project: DOM.com, een interactieve game met nadruk op UX en UI design.",
+    "tags": ["UX/UI", "interactief", "game design", "jaar 2", "2024 maart"],
+    "images": {
+      "main": "./images/domGame.webp",
+      "cutout": "./images/domcutout.webp",
+      "border": "./images/borderDom.svg",
+      "logo": "./images/DomLogoFull.webp"
+    }
+  },
+  {
+    "name": "Building Playful Worlds 2 - Shintaro",
+    "description": "Project gericht op het bouwen van speelse werelden met het personage Shintaro.",
+    "tags": ["3D modeling", "worldbuilding", "lighting", "jaar 1", "2023 juni"],
+    "images": {}
+  },
+  {
+    "name": "Vrij II - Soulseeker",
+    "description": "Vrij project waarin de game 'Soulseeker' is ontwikkeld, met focus op sfeer en gameplay.",
+    "tags": ["gameplay design", "visual storytelling", "jaar 2", "2024 juni"],
+    "images": {
+      "main": "./images/soulseeker.webp",
+      "cutout": "./images/soulseekerCutOut.webp"
+    }
+  },
+  {
+    "name": "Speelkaarten – 3D Sculpting Series",
+    "description": "Een reeks 3D sculpting projecten gebaseerd op speelkaarten (spade, clover, diamond).",
+    "tags": ["3D sculpting", "cards", "illustratie", "concept art", "jaar 2"],
+    "images": {
+      "spade": {
+        "main": "./images/cardsSpade.webp",
+        "cutout": "./images/cardsSpadeCutOut.webp"
+      },
+      "clover": {
+        "main": "./images/cardsClover.webp",
+        "cutout": "./images/cardsCloverCutOut.webp"
+      },
+      "diamond": {
+        "main": "./images/cardsDia.webp",
+        "cutout": "./images/cardsDiaCutOut.webp"
+      },
+      "heart": {
+        "main": "./images/cardsHeart.webp",
+        "cutout": "./images/cardsHeartCutOut.webp"
+      },
+      "border": "./images/borderKaarten.svg"
+    }
+  },
+  {
+    "name": "Character Design - Bauble",
+    "description": "Ontwerp van het personage Bauble met nadruk op vormtaal en expressie.",
+    "tags": ["character design", "concept sculpting", "jaar 2", "2023 december"],
+    "images": {
+      "main": "./images/monster.webp",
+      "cutout": "./images/monsterCutOut.webp"
+    }
+  },
+  {
+    "name": "Environment Design - Mesa Temple",
+    "description": "Een environment design project rond een mystieke tempel in woestijnlandschap.",
+    "tags": ["environment design", "composition", "color grading", "jaar 2", "2024 maart"],
+    "images": {}
+  },
+  {
+    "name": "Game Jam - Masked Masquerade",
+    "description": "Game jam project ontwikkeld in korte tijd met focus op visuele stijl en samenwerking.",
+    "tags": ["game jam", "team project", "art direction", "jaar 2", "2024 januari"],
+    "images": {
+      "main": "./images/masquerade.webp",
+      "cutout": "./images/masqueradeCutOut.webp"
+    }
+  },
+  {
+    "name": "Visual Cinematic Development - Apocalypse",
+    "description": "Filmisch project waarin post-apocalyptische sferen en visuele storytelling centraal staan.",
+    "tags": ["cinematics", "lighting", "storytelling", "jaar 2", "2023 november"],
+    "images": {}
+  },
+  {
+    "name": "Context III - Monochrome",
+    "description": "Derdejaars context project met focus op het gebruik van contrast en vorm in een monochroom thema.",
+    "tags": ["contrast", "vormonderzoek", "compositie", "jaar 3", "2025 juni"],
+    "images": {
+      "main": "./images/Monochrome.webp",
+      "cutout": "./images/Monochromecutout.webp",
+      "border": "./images/borderMonochrome.svg",
+      "logo": "./images/nameMonochrome.webp"
+    }
+  },
+  {
+    "name": "Stage - Wanderlost Interactive",
+    "description": "Stageperiode bij Wanderlost Interactive met bijdragen aan lopende gameprojecten en designprocessen.",
+    "tags": ["stage", "professionele workflow", "game development", "jaar 3", "2025 januari"],
+    "images": {}
+  },
+  {
+    "name": "Special effects (Background Drawing)",
+    "description": "Background drawing project.",
+    "tags": ["special effects", "background"],
+    "images": {
+      "main": "./images/BackgroundDrawing.webp",
+      "cutout": "./images/backgroundDrawingCutOut.webp"
+    }
+  }
+]
